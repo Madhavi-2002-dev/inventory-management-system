@@ -1,8 +1,0 @@
-services:
-  - type: web
-    name: inventory-management-system
-    runtime: java
-    plan: free
-    rootDir: InventoryManagementSystem
-    buildCommand: mvn clean package -DskipTests
-    startCommand: java -jar target/*.jar
