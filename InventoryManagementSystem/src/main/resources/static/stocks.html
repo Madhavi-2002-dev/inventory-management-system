@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Stocks</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">Inventory MS</div>
+    <a class="nav-item" href="index.html">🏠 Dashboard</a>
+    <a class="nav-item" href="products.html">📦 Products</a>
+    <a class="nav-item active" href="stocks.html">🚚 Stocks</a>
+    <a class="nav-item" href="orders.html">🛒 Orders</a>
+  </aside>
+
+  <main class="main">
+    <div class="top-row">
+      <div class="page-title">Stocks</div>
+      <div>
+        <button class="btn" id="btnAddStock">Add Stock</button>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <div class="table-controls">
+        <input class="search" id="stockSearch" placeholder="Search by productId">
+        <div id="stockCount"></div>
+      </div>
+
+      <table class="table" id="stocksTable">
+        <thead><tr><th>Product ID</th><th>Quantity</th><th>Last Updated</th><th>Actions</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<!-- modal -->
+<div id="modalStock" class="modal">
+  <div class="modal-card">
+    <h2>Add Stock</h2>
+
+<label for="productSelect">Select Product:</label>
+<select id="productSelect">
+    <option value="">-- Select Product --</option>
+</select>
+
+<br><br>
+
+<label for="stockQuantity">Enter Quantity:</label>
+<input type="number" id="stockQuantity">
+
+<br><br>
+
+<button onclick="saveStock()">Save Stock</button>
+<button onclick="cancelStock()">Cancel</button>
+
+    
+  </div>
+</div>
+
+<script type="module">
+import { initStocks } from './js/stocks.js';
+initStocks();
+</script>
+</body>
+</html>

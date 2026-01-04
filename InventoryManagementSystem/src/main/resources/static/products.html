@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Products</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">Inventory MS</div>
+    <a class="nav-item" href="index.html">🏠 Dashboard</a>
+    <a class="nav-item active" href="products.html">📦 Products</a>
+    <a class="nav-item" href="orders.html">🛒 Orders</a>
+    <a class="nav-item" href="#">🗂 Categories</a>
+    
+    <a class="nav-item" href="stocks.html">🚚 Stocks</a>
+    
+  </aside>
+
+  <main class="main">
+    <div class="top-row">
+      <div class="page-title">Products</div>
+      <div>
+        <button class="btn" id="btnAdd">Add Product</button>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <div class="table-controls">
+        <input class="search" id="productSearch" placeholder="Search by name">
+        <div id="productCount"></div>
+      </div>
+
+      <table class="table" id="productsTable">
+        <thead>
+  <tr>
+    <th>ID</th>
+    <th>Category</th>
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Actions</th>
+  </tr>
+</thead>
+
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-card">
+    <h3 id="modalTitle">Add Product</h3>
+    <div style="margin-top:10px">
+      <div class="form-row">
+        <input id="pCategory" class="input" placeholder="Category">
+        <input id="pName" class="input" placeholder="Name">
+      </div>
+      <div class="form-row">
+        <input id="pQty" class="input" placeholder="Quantity" type="number">
+        <input id="pPrice" class="input" placeholder="Price" type="number" step="0.01">
+      </div>
+      <div class="form-actions">
+        <button class="btn" id="saveBtn">Save</button>
+        <button class="btn ghost" id="cancelBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="module">
+import { initProducts } from './js/products.js';
+initProducts();
+</script>
+</body>
+</html>
